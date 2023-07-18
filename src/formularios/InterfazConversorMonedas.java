@@ -5,7 +5,7 @@
  */
 package formularios;
 
-import clases.Imagenes;
+import clases.HerramientasFormularios;
 import java.awt.Color;
 import javafx.scene.layout.Border;
 import javax.swing.BorderFactory;
@@ -20,16 +20,16 @@ import javax.swing.JFrame;
  * @author Sergio
  */
 public class InterfazConversorMonedas extends javax.swing.JFrame {
-
+    HerramientasFormularios ditribuidor = new HerramientasFormularios();
     /**
      * Creates new form Bienvenida
      */
     public InterfazConversorMonedas() {
-        Imagenes icono = new Imagenes();
+        
         initComponents();
         this.setLocationRelativeTo(null);
         jScrollPane.setBorder(null);
-        setIconImage(icono.getIconImage());
+        setIconImage(ditribuidor.getIconImage());
         
     }
 
@@ -93,6 +93,7 @@ public class InterfazConversorMonedas extends javax.swing.JFrame {
         btnRegresar.setFont(new java.awt.Font("Roboto Black", 1, 11)); // NOI18N
         btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegresar.setText("Regresar");
+        btnRegresar.setFocusable(false);
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
@@ -152,6 +153,11 @@ public class InterfazConversorMonedas extends javax.swing.JFrame {
         btnPesoMexicano.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
         btnPesoMexicano.setForeground(new java.awt.Color(255, 255, 255));
         btnPesoMexicano.setText("Click");
+        btnPesoMexicano.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesoMexicanoActionPerformed(evt);
+            }
+        });
         background.add(btnPesoMexicano, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 100, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -171,8 +177,12 @@ public class InterfazConversorMonedas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-            
+        ditribuidor.getOtherInterfaz(this,new InterfazPrincipal());
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void btnPesoMexicanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesoMexicanoActionPerformed
+        ditribuidor.getOtherInterfaz(this,new InterfazConversorPesoOtraMoneda());
+    }//GEN-LAST:event_btnPesoMexicanoActionPerformed
 
     /**
      * @param args the command line arguments
