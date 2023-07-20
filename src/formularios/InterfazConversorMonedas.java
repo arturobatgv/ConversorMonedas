@@ -5,13 +5,9 @@
  */
 package formularios;
 
+import clases.ConversorMonedas;
 import clases.HerramientasFormularios;
-import java.awt.Color;
-import javafx.scene.layout.Border;
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
+
 
 
 
@@ -21,6 +17,7 @@ import javax.swing.JFrame;
  */
 public class InterfazConversorMonedas extends javax.swing.JFrame {
     HerramientasFormularios ditribuidor = new HerramientasFormularios();
+    ConversorMonedas metodo = new ConversorMonedas();
     /**
      * Creates new form Bienvenida
      */
@@ -30,7 +27,6 @@ public class InterfazConversorMonedas extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         jScrollPane.setBorder(null);
         setIconImage(ditribuidor.getIconImage());
-        
     }
 
     /**
@@ -99,15 +95,15 @@ public class InterfazConversorMonedas extends javax.swing.JFrame {
                 btnRegresarActionPerformed(evt);
             }
         });
-        background.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 100, 30));
+        background.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, 100, 30));
 
         copyRight.setFont(new java.awt.Font("Roboto Light", 2, 11)); // NOI18N
         copyRight.setForeground(new java.awt.Color(255, 255, 255));
         copyRight.setText("© Copyrigth Sergio González - 2023");
-        background.add(copyRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, -1, -1));
+        background.add(copyRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, -1, -1));
 
         backgroundBilletes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/billetes.png"))); // NOI18N
-        background.add(backgroundBilletes, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 260, 360));
+        background.add(backgroundBilletes, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 280, 380));
 
         bienvenida.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
         bienvenida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ConversorMonedaslogo.png"))); // NOI18N
@@ -115,13 +111,13 @@ public class InterfazConversorMonedas extends javax.swing.JFrame {
         background.add(bienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
 
         imagenOtraMoneda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/otramonedaPeso150.png"))); // NOI18N
-        background.add(imagenOtraMoneda, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 150, -1));
+        background.add(imagenOtraMoneda, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 150, -1));
 
         introduccion.setEditable(false);
         introduccion.setColumns(20);
         introduccion.setFont(new java.awt.Font("Roboto Medium", 3, 12)); // NOI18N
         introduccion.setLineWrap(true);
-        introduccion.setText("Programa que convierte pesos mexicanos en cualquier divisas mostradas o inversamente");
+        introduccion.setText("Programa que convierte pesos mexicanos en cualquier divisas mostradas o inversamente, actualizadas al momento.");
         introduccion.setToolTipText("");
         introduccion.setWrapStyleWord(true);
         introduccion.setBorder(null);
@@ -130,24 +126,29 @@ public class InterfazConversorMonedas extends javax.swing.JFrame {
         introduccion.setRequestFocusEnabled(false);
         jScrollPane.setViewportView(introduccion);
 
-        background.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 360, -1));
+        background.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 360, 50));
 
         labelOtraMoneda.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         labelOtraMoneda.setText("Otra moneda a peso mexicano");
-        background.add(labelOtraMoneda, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, -1, -1));
+        background.add(labelOtraMoneda, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, -1, -1));
 
         imagenPesoMexicano.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pesoOtramoneda150.png"))); // NOI18N
-        background.add(imagenPesoMexicano, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 150, -1));
+        background.add(imagenPesoMexicano, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 150, -1));
 
         labelPesoMexicano.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         labelPesoMexicano.setText("Peso mexicano a otra moneda");
-        background.add(labelPesoMexicano, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
+        background.add(labelPesoMexicano, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
 
         btnOtramoneda.setBackground(new java.awt.Color(14, 144, 173));
         btnOtramoneda.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
         btnOtramoneda.setForeground(new java.awt.Color(255, 255, 255));
         btnOtramoneda.setText("Click");
-        background.add(btnOtramoneda, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 100, 30));
+        btnOtramoneda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOtramonedaActionPerformed(evt);
+            }
+        });
+        background.add(btnOtramoneda, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, 100, 30));
 
         btnPesoMexicano.setBackground(new java.awt.Color(0, 99, 65));
         btnPesoMexicano.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
@@ -158,7 +159,7 @@ public class InterfazConversorMonedas extends javax.swing.JFrame {
                 btnPesoMexicanoActionPerformed(evt);
             }
         });
-        background.add(btnPesoMexicano, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 100, 30));
+        background.add(btnPesoMexicano, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 100, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -168,9 +169,7 @@ public class InterfazConversorMonedas extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -183,6 +182,10 @@ public class InterfazConversorMonedas extends javax.swing.JFrame {
     private void btnPesoMexicanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesoMexicanoActionPerformed
         ditribuidor.getOtherInterfaz(this,new InterfazConversorPesoOtraMoneda());
     }//GEN-LAST:event_btnPesoMexicanoActionPerformed
+
+    private void btnOtramonedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOtramonedaActionPerformed
+         ditribuidor.getOtherInterfaz(this,new InterfazConversorOtraMonedaPeso());
+    }//GEN-LAST:event_btnOtramonedaActionPerformed
 
     /**
      * @param args the command line arguments

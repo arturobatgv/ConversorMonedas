@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 package formularios;
-
+import clases.ConversorMonedas;
 import clases.HerramientasFormularios;
+
 
 /**
  *
@@ -53,6 +54,7 @@ HerramientasFormularios distribuidor = new HerramientasFormularios();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Converter");
+        setResizable(false);
 
         background.setBackground(new java.awt.Color(201, 233, 255));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

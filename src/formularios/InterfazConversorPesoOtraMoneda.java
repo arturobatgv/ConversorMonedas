@@ -6,8 +6,8 @@
 package formularios;
 
 import Exceptions.ExceptionCajaVacia;
+import clases.ConversorMonedas;
 import clases.HerramientasFormularios;
-import clases.Temperatura;
 import clases.TextGris;
 import javax.swing.JOptionPane;
 
@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
 public class InterfazConversorPesoOtraMoneda extends javax.swing.JFrame {
    
     HerramientasFormularios distribuidor = new HerramientasFormularios();
-    Temperatura metodo = new Temperatura();
+    ConversorMonedas metodo = new ConversorMonedas();
     /**
      * Creates new form Bienvenida
      */
@@ -52,7 +52,7 @@ public class InterfazConversorPesoOtraMoneda extends javax.swing.JFrame {
         btnCopiar = new javax.swing.JToggleButton();
         btnRegresar = new javax.swing.JToggleButton();
         copyRight = new javax.swing.JLabel();
-        backgroundTemperatura = new javax.swing.JLabel();
+        backgroundBilletes = new javax.swing.JLabel();
         bienvenida = new javax.swing.JLabel();
         jScrollPane = new javax.swing.JScrollPane();
         introduccion = new javax.swing.JTextArea();
@@ -123,8 +123,8 @@ public class InterfazConversorPesoOtraMoneda extends javax.swing.JFrame {
         copyRight.setText("© Copyrigth Sergio González - 2023");
         background.add(copyRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, -1));
 
-        backgroundTemperatura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/billetes.png"))); // NOI18N
-        background.add(backgroundTemperatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 260, 330));
+        backgroundBilletes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/billetes.png"))); // NOI18N
+        background.add(backgroundBilletes, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 260, 330));
 
         bienvenida.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
         bienvenida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pesoOtramoneda.png"))); // NOI18N
@@ -151,7 +151,7 @@ public class InterfazConversorPesoOtraMoneda extends javax.swing.JFrame {
         background.add(labelPesos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, 20));
 
         comboConversion.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        comboConversion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una conversión", "° C -> ° F", "° C -> ° K", "° F -> ° C", "° F -> ° K", "° K -> ° C", "° K -> ° F" }));
+        comboConversion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una conversión", "MXN -> USD", "MXN -> EUR", "MXN -> LIBRA", "MXN -> YEN", "MXN -> Won SK" }));
         comboConversion.setFocusable(false);
         comboConversion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,24 +170,9 @@ public class InterfazConversorPesoOtraMoneda extends javax.swing.JFrame {
         cajaSigno.setBorder(null);
         cajaSigno.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         cajaSigno.setFocusable(false);
-        cajaSigno.addCaretListener(new javax.swing.event.CaretListener() {
-            public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                cajaSignoCaretUpdate(evt);
-            }
-        });
         cajaSigno.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cajaSignoMouseClicked(evt);
-            }
-        });
-        cajaSigno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cajaSignoActionPerformed(evt);
-            }
-        });
-        cajaSigno.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                cajaSignoKeyTyped(evt);
             }
         });
         background.add(cajaSigno, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 10, 20));
@@ -253,55 +238,46 @@ public class InterfazConversorPesoOtraMoneda extends javax.swing.JFrame {
 
     private void comboConversionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboConversionActionPerformed
        try{
-        distribuidor.validarCajavacia(cajaTextoPesos);
-        double temperaturaUsuario = Double.parseDouble(cajaTextoPesos.getText());
+        distribuidor.validación(cajaTextoPesos);
+        double pesosUsuario = Double.parseDouble(cajaTextoPesos.getText());
         int prueba = (int) comboConversion.getSelectedIndex();
        switch(prueba){
             case 0:
                 break;
             case 1:
-                txtResultado.setText(metodo.convertirCentigradosFahrenheit(temperaturaUsuario));
+                txtResultado.setText(metodo.obtenerConversionDolar("USD","MXN",pesosUsuario));
                 break;
             case 2:
-                txtResultado.setText(metodo.convertirCentigradosKelvins(temperaturaUsuario));
+                txtResultado.setText(metodo.obtenerConversionDolar("USD","EUR",pesosUsuario));
                 break;
             case 3:
-                txtResultado.setText(metodo.convertirFahrenheitCentigrados(temperaturaUsuario));
+                txtResultado.setText(metodo.obtenerConversionDolar("USD","GBP",pesosUsuario));
                 break;
             case 4:
-                txtResultado.setText(metodo.convertirFahrenheitKelvins(temperaturaUsuario));
+                txtResultado.setText(metodo.obtenerConversionDolar("USD","JPY",pesosUsuario));
                 break;
             case 5:
-                txtResultado.setText(metodo.convertirKelvinsCentigrados(temperaturaUsuario));
-                break;
-            case 6:
-                txtResultado.setText(metodo.convertirKelvinsFahrenheit(temperaturaUsuario));
+                
+                txtResultado.setText(metodo.obtenerConversionDolar("USD","KRW",pesosUsuario));
                 break;
        }
        }catch (ExceptionCajaVacia e){
             e.printStackTrace();           
-       }
+       }catch (NumberFormatException e){
+            e.printStackTrace();           
+            JOptionPane.showMessageDialog(null, "Se ingreo un valor Invalido");
+    }
+ 
     }//GEN-LAST:event_comboConversionActionPerformed
 
     private void btnCopiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCopiarActionPerformed
-            distribuidor.copiarPortapapeles(txtResultado);
+          distribuidor.copiarPortapapeles(txtResultado);
     }//GEN-LAST:event_btnCopiarActionPerformed
 
-    private void cajaSignoCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_cajaSignoCaretUpdate
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cajaSignoCaretUpdate
-
     private void cajaSignoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cajaSignoMouseClicked
-        // TODO add your handling code here:
+            cajaTextoPesos.setText("");
+            txtResultado.setText("En espera de ingresar algun valor a convertir"); 
     }//GEN-LAST:event_cajaSignoMouseClicked
-
-    private void cajaSignoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaSignoKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cajaSignoKeyTyped
-
-    private void cajaSignoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaSignoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cajaSignoActionPerformed
 
     /* 
     ° C -> ° F
@@ -368,9 +344,9 @@ public class InterfazConversorPesoOtraMoneda extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
+    private javax.swing.JLabel backgroundBilletes;
     private javax.swing.JPanel backgroundBlack;
     private javax.swing.JPanel backgroundBlackTitulo;
-    private javax.swing.JLabel backgroundTemperatura;
     private javax.swing.JLabel bienvenida;
     private javax.swing.JToggleButton btnCopiar;
     private javax.swing.JToggleButton btnRegresar;

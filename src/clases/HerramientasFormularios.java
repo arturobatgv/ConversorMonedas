@@ -39,24 +39,25 @@ public class HerramientasFormularios {
         labelName.setIcon(icon);
         }
         
-        
         public void getOtherInterfaz(JFrame formularioIncio, JFrame formularioFinal){
             formularioIncio.setVisible(false);
             formularioFinal.setVisible(true);
         }
         
-        public String convertirResultadoString(Double grados){
-            return String.valueOf(grados);
+        public String convertirResultadoString(Double resultado){
+            resultado = Math.round(resultado * 1e6) / 1e6;
+            return String.valueOf(resultado);
         }
-        public void validarCajavacia(JTextField caja) throws ExceptionCajaVacia{
+        public void validación(JTextField caja) throws ExceptionCajaVacia{
             if(caja.getText().isEmpty()){            
-                throw new ExceptionCajaVacia("Error, No se ingreso alguna temperatura");
+                throw new ExceptionCajaVacia("Error, No se ingreso alguna cantidad");
             }
         }
+
         public void copiarPortapapeles(JLabel label){
             StringSelection seleccion = new StringSelection(label.getText());
             Clipboard portapapels =  Toolkit.getDefaultToolkit().getSystemClipboard();
             portapapels.setContents(seleccion, null);
         }
-
+    
 }

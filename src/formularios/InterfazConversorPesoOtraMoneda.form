@@ -182,7 +182,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="backgroundTemperatura">
+        <Component class="javax.swing.JLabel" name="backgroundBilletes">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/imagenes/billetes.png"/>
@@ -264,14 +264,13 @@
               <Font name="Roboto" size="12" style="1"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="7">
+              <StringArray count="6">
                 <StringItem index="0" value="Seleccione una conversi&#xf3;n"/>
-                <StringItem index="1" value="&#xb0; C -&gt; &#xb0; F"/>
-                <StringItem index="2" value="&#xb0; C -&gt; &#xb0; K"/>
-                <StringItem index="3" value="&#xb0; F -&gt; &#xb0; C"/>
-                <StringItem index="4" value="&#xb0; F -&gt; &#xb0; K"/>
-                <StringItem index="5" value="&#xb0; K -&gt; &#xb0; C"/>
-                <StringItem index="6" value="&#xb0; K -&gt; &#xb0; F"/>
+                <StringItem index="1" value="MXN -&gt; USD"/>
+                <StringItem index="2" value="MXN -&gt; EUR"/>
+                <StringItem index="3" value="MXN -&gt; LIBRA"/>
+                <StringItem index="4" value="MXN -&gt; YEN"/>
+                <StringItem index="5" value="MXN -&gt; Won SK"/>
               </StringArray>
             </Property>
             <Property name="focusable" type="boolean" value="false"/>
@@ -319,10 +318,7 @@
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="cajaSignoCaretUpdate"/>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cajaSignoMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cajaSignoActionPerformed"/>
-            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="cajaSignoKeyTyped"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

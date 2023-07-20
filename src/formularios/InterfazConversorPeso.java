@@ -19,21 +19,21 @@ import javax.swing.JOptionPane;
  *
  * @author Sergio
  */
-public class InterfazConversorTemperatura extends javax.swing.JFrame {
+public class InterfazConversorPeso extends javax.swing.JFrame {
    
     HerramientasFormularios distribuidor = new HerramientasFormularios();
     Temperatura metodo = new Temperatura();
     /**
      * Creates new form Bienvenida
      */
-    public InterfazConversorTemperatura() {
+    public InterfazConversorPeso() {
         
         initComponents();
         this.setLocationRelativeTo(null);
         jScrollPane.setBorder(null);
         setIconImage(distribuidor.getIconImage());
-        distribuidor.setImageBackground(backgroundTemperatura, "src/imagenes/backgroundTemperatura.jpg");
-        new TextGris("  Aquí", cajaTextoTemperatura);
+        distribuidor.setImageBackground(backgroundPeso, "src/imagenes/backgroundPeso.png");
+        new TextGris("  Aquí", cajaTextoPeso);
     }
 
     /**
@@ -53,14 +53,14 @@ public class InterfazConversorTemperatura extends javax.swing.JFrame {
         btnCopiar = new javax.swing.JToggleButton();
         btnRegresar = new javax.swing.JToggleButton();
         copyRight = new javax.swing.JLabel();
-        backgroundTemperatura = new javax.swing.JLabel();
+        backgroundPeso = new javax.swing.JLabel();
         bienvenida = new javax.swing.JLabel();
         jScrollPane = new javax.swing.JScrollPane();
         introduccion = new javax.swing.JTextArea();
-        labelTemperatura = new javax.swing.JLabel();
+        labelPeso = new javax.swing.JLabel();
         comboConversion = new javax.swing.JComboBox<>();
         labelResultado = new javax.swing.JLabel();
-        cajaTextoTemperatura = new javax.swing.JTextField();
+        cajaTextoPeso = new javax.swing.JTextField();
         txtResultado = new javax.swing.JLabel();
         lineaResultado = new javax.swing.JSeparator();
         lineaTemperatura = new javax.swing.JSeparator();
@@ -81,8 +81,8 @@ public class InterfazConversorTemperatura extends javax.swing.JFrame {
         labelTituloProgram.setForeground(new java.awt.Color(255, 255, 255));
         labelTituloProgram.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelTituloProgram.setLabelFor(background);
-        labelTituloProgram.setText("Conversor de Temperatura");
-        backgroundBlackTitulo.add(labelTituloProgram, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 30));
+        labelTituloProgram.setText("Conversor de Peso");
+        backgroundBlackTitulo.add(labelTituloProgram, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
 
         background.add(backgroundBlackTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 210, 30));
 
@@ -120,21 +120,21 @@ public class InterfazConversorTemperatura extends javax.swing.JFrame {
         background.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 100, 30));
 
         copyRight.setFont(new java.awt.Font("Roboto Light", 2, 11)); // NOI18N
-        copyRight.setForeground(new java.awt.Color(255, 255, 255));
+        copyRight.setForeground(new java.awt.Color(51, 255, 204));
         copyRight.setText("© Copyrigth Sergio González - 2023");
-        background.add(copyRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, -1, -1));
-        background.add(backgroundTemperatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 260, 380));
+        background.add(copyRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, -1, 20));
+        background.add(backgroundPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 260, 380));
 
         bienvenida.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
-        bienvenida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ConversorTemperaturalogo.png"))); // NOI18N
+        bienvenida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ConversorPesologo.png"))); // NOI18N
         bienvenida.setText(" ¡BIENVENIDO!");
-        background.add(bienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
+        background.add(bienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
 
         introduccion.setEditable(false);
         introduccion.setColumns(20);
         introduccion.setFont(new java.awt.Font("Roboto Medium", 3, 12)); // NOI18N
         introduccion.setLineWrap(true);
-        introduccion.setText("Programa que convierte una medición de temperatura a otro tipo de medición de temperatura.");
+        introduccion.setText("Programa que convierte una medición de peso a otro tipo de medición de peso.");
         introduccion.setToolTipText("");
         introduccion.setWrapStyleWord(true);
         introduccion.setBorder(null);
@@ -143,11 +143,11 @@ public class InterfazConversorTemperatura extends javax.swing.JFrame {
         introduccion.setRequestFocusEnabled(false);
         jScrollPane.setViewportView(introduccion);
 
-        background.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 360, -1));
+        background.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 360, -1));
 
-        labelTemperatura.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        labelTemperatura.setText("Ingresa la temperatura:");
-        background.add(labelTemperatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, 20));
+        labelPeso.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        labelPeso.setText("Ingresa el peso a convertir:");
+        background.add(labelPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, 20));
 
         comboConversion.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         comboConversion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una conversión", "° C -> ° F", "° C -> ° K", "° F -> ° C", "° F -> ° K", "° K -> ° C", "° K -> ° F" }));
@@ -164,25 +164,25 @@ public class InterfazConversorTemperatura extends javax.swing.JFrame {
         labelResultado.setText("Resultado:");
         background.add(labelResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
 
-        cajaTextoTemperatura.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        cajaTextoTemperatura.setBorder(null);
-        cajaTextoTemperatura.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        cajaTextoTemperatura.addCaretListener(new javax.swing.event.CaretListener() {
+        cajaTextoPeso.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        cajaTextoPeso.setBorder(null);
+        cajaTextoPeso.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        cajaTextoPeso.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                cajaTextoTemperaturaCaretUpdate(evt);
+                cajaTextoPesoCaretUpdate(evt);
             }
         });
-        cajaTextoTemperatura.addMouseListener(new java.awt.event.MouseAdapter() {
+        cajaTextoPeso.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cajaTextoTemperaturaMouseClicked(evt);
+                cajaTextoPesoMouseClicked(evt);
             }
         });
-        cajaTextoTemperatura.addKeyListener(new java.awt.event.KeyAdapter() {
+        cajaTextoPeso.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                cajaTextoTemperaturaKeyTyped(evt);
+                cajaTextoPesoKeyTyped(evt);
             }
         });
-        background.add(cajaTextoTemperatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 210, 20));
+        background.add(cajaTextoPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 210, 20));
 
         txtResultado.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         txtResultado.setText("En espera de ingresar algun valor a convertir");
@@ -211,24 +211,24 @@ public class InterfazConversorTemperatura extends javax.swing.JFrame {
        distribuidor.getOtherInterfaz(this,new InterfazPrincipal());
     }//GEN-LAST:event_btnRegresarActionPerformed
 
-    private void cajaTextoTemperaturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cajaTextoTemperaturaMouseClicked
-            cajaTextoTemperatura.setText("");
+    private void cajaTextoPesoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cajaTextoPesoMouseClicked
+            cajaTextoPeso.setText("");
             txtResultado.setText("En espera de ingresar algun valor a convertir"); 
-    }//GEN-LAST:event_cajaTextoTemperaturaMouseClicked
+    }//GEN-LAST:event_cajaTextoPesoMouseClicked
 
-    private void cajaTextoTemperaturaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_cajaTextoTemperaturaCaretUpdate
+    private void cajaTextoPesoCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_cajaTextoPesoCaretUpdate
         txtResultado.setText("En espera de seleccionar una conversión");
-    }//GEN-LAST:event_cajaTextoTemperaturaCaretUpdate
+    }//GEN-LAST:event_cajaTextoPesoCaretUpdate
 
-    private void cajaTextoTemperaturaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaTextoTemperaturaKeyTyped
+    private void cajaTextoPesoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaTextoPesoKeyTyped
         char car = evt.getKeyChar();
         if((car<'0' || car>'9') && (car<',' || car>'.')) evt.consume();
-    }//GEN-LAST:event_cajaTextoTemperaturaKeyTyped
+    }//GEN-LAST:event_cajaTextoPesoKeyTyped
 
     private void comboConversionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboConversionActionPerformed
        try{
-           distribuidor.validación(cajaTextoTemperatura);
-        double temperaturaUsuario = Double.parseDouble(cajaTextoTemperatura.getText());
+           distribuidor.validación(cajaTextoPeso);
+        double temperaturaUsuario = Double.parseDouble(cajaTextoPeso.getText());
         int prueba = (int) comboConversion.getSelectedIndex();
        switch(prueba){
             case 0:
@@ -291,14 +291,22 @@ public class InterfazConversorTemperatura extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InterfazConversorTemperatura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazConversorPeso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InterfazConversorTemperatura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazConversorPeso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InterfazConversorTemperatura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazConversorPeso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InterfazConversorTemperatura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazConversorPeso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -311,7 +319,7 @@ public class InterfazConversorTemperatura extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfazConversorTemperatura().setVisible(true);
+                new InterfazConversorPeso().setVisible(true);
                 
                 
             }
@@ -323,17 +331,17 @@ public class InterfazConversorTemperatura extends javax.swing.JFrame {
     private javax.swing.JPanel background;
     private javax.swing.JPanel backgroundBlack;
     private javax.swing.JPanel backgroundBlackTitulo;
-    private javax.swing.JLabel backgroundTemperatura;
+    private javax.swing.JLabel backgroundPeso;
     private javax.swing.JLabel bienvenida;
     private javax.swing.JToggleButton btnCopiar;
     private javax.swing.JToggleButton btnRegresar;
-    private javax.swing.JTextField cajaTextoTemperatura;
+    private javax.swing.JTextField cajaTextoPeso;
     private javax.swing.JComboBox<String> comboConversion;
     private javax.swing.JLabel copyRight;
     private javax.swing.JTextArea introduccion;
     private javax.swing.JScrollPane jScrollPane;
+    private javax.swing.JLabel labelPeso;
     private javax.swing.JLabel labelResultado;
-    private javax.swing.JLabel labelTemperatura;
     private javax.swing.JLabel labelTituloProgram;
     private javax.swing.JSeparator lineaResultado;
     private javax.swing.JSeparator lineaTemperatura;
