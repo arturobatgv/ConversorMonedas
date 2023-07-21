@@ -19,14 +19,14 @@ import javax.swing.JOptionPane;
  *
  * @author Sergio
  */
-public class InterfazConversorPesoOtraMoneda extends javax.swing.JFrame {
+public class InterfazConversorPesosOtraMoneda extends javax.swing.JFrame {
    
     HerramientasFormularios distribuidor = new HerramientasFormularios();
     ConversorMonedas metodo = new ConversorMonedas();
     /**
      * Creates new form Bienvenida
      */
-    public InterfazConversorPesoOtraMoneda() {
+    public InterfazConversorPesosOtraMoneda() {
         
         initComponents();
         this.setLocationRelativeTo(null);
@@ -306,14 +306,30 @@ public class InterfazConversorPesoOtraMoneda extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InterfazConversorPesoOtraMoneda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazConversorPesosOtraMoneda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InterfazConversorPesoOtraMoneda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazConversorPesosOtraMoneda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InterfazConversorPesoOtraMoneda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazConversorPesosOtraMoneda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InterfazConversorPesoOtraMoneda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazConversorPesosOtraMoneda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -334,7 +350,7 @@ public class InterfazConversorPesoOtraMoneda extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfazConversorPesoOtraMoneda().setVisible(true);
+                new InterfazConversorPesosOtraMoneda().setVisible(true);
                 
                 
             }

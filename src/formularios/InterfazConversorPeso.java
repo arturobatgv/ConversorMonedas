@@ -7,7 +7,7 @@ package formularios;
 
 import Exceptions.ExceptionCajaVacia;
 import clases.HerramientasFormularios;
-import clases.Temperatura;
+import clases.conversorPeso;
 import clases.TextGris;
 import javax.swing.JOptionPane;
 
@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
 public class InterfazConversorPeso extends javax.swing.JFrame {
    
     HerramientasFormularios distribuidor = new HerramientasFormularios();
-    Temperatura metodo = new Temperatura();
+    conversorPeso metodo = new conversorPeso();
     /**
      * Creates new form Bienvenida
      */
@@ -58,12 +58,14 @@ public class InterfazConversorPeso extends javax.swing.JFrame {
         jScrollPane = new javax.swing.JScrollPane();
         introduccion = new javax.swing.JTextArea();
         labelPeso = new javax.swing.JLabel();
-        comboConversion = new javax.swing.JComboBox<>();
+        comboConversion2 = new javax.swing.JComboBox<>();
         labelResultado = new javax.swing.JLabel();
         cajaTextoPeso = new javax.swing.JTextField();
         txtResultado = new javax.swing.JLabel();
         lineaResultado = new javax.swing.JSeparator();
         lineaTemperatura = new javax.swing.JSeparator();
+        comboConversion = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Conversor de Temperatura");
@@ -105,7 +107,7 @@ public class InterfazConversorPeso extends javax.swing.JFrame {
                 btnCopiarActionPerformed(evt);
             }
         });
-        background.add(btnCopiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, 100, 30));
+        background.add(btnCopiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 100, 30));
 
         btnRegresar.setBackground(new java.awt.Color(255, 36, 0));
         btnRegresar.setFont(new java.awt.Font("Roboto Black", 1, 11)); // NOI18N
@@ -143,26 +145,26 @@ public class InterfazConversorPeso extends javax.swing.JFrame {
         introduccion.setRequestFocusEnabled(false);
         jScrollPane.setViewportView(introduccion);
 
-        background.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 360, -1));
+        background.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 360, -1));
 
         labelPeso.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         labelPeso.setText("Ingresa el peso a convertir:");
-        background.add(labelPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, 20));
+        background.add(labelPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, 20));
 
-        comboConversion.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        comboConversion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una conversión", "° C -> ° F", "° C -> ° K", "° F -> ° C", "° F -> ° K", "° K -> ° C", "° K -> ° F" }));
-        comboConversion.setFocusable(false);
-        comboConversion.addActionListener(new java.awt.event.ActionListener() {
+        comboConversion2.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        comboConversion2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una conversión", "kilogramos", "gramos", "miligramos", "libras", "onzas", "toneladas" }));
+        comboConversion2.setFocusable(false);
+        comboConversion2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboConversionActionPerformed(evt);
+                comboConversion2ActionPerformed(evt);
             }
         });
-        background.add(comboConversion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 200, 30));
+        background.add(comboConversion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 170, 30));
 
         labelResultado.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
         labelResultado.setForeground(new java.awt.Color(255, 51, 51));
         labelResultado.setText("Resultado:");
-        background.add(labelResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+        background.add(labelResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
         cajaTextoPeso.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         cajaTextoPeso.setBorder(null);
@@ -182,13 +184,31 @@ public class InterfazConversorPeso extends javax.swing.JFrame {
                 cajaTextoPesoKeyTyped(evt);
             }
         });
-        background.add(cajaTextoPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 210, 20));
+        background.add(cajaTextoPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 210, 20));
 
         txtResultado.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         txtResultado.setText("En espera de ingresar algun valor a convertir");
-        background.add(txtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 300, 20));
-        background.add(lineaResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 250, 20));
-        background.add(lineaTemperatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 170, 20));
+        background.add(txtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 300, 20));
+        background.add(lineaResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 250, 20));
+        background.add(lineaTemperatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 170, 20));
+
+        comboConversion.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        comboConversion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una conversión", "kilogramos", "gramos", "miligramos", "libras", "onzas", "toneladas" }));
+        comboConversion.setFocusable(false);
+        comboConversion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboConversionActionPerformed(evt);
+            }
+        });
+        background.add(comboConversion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 170, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inverso.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 40, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -218,6 +238,7 @@ public class InterfazConversorPeso extends javax.swing.JFrame {
 
     private void cajaTextoPesoCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_cajaTextoPesoCaretUpdate
         txtResultado.setText("En espera de seleccionar una conversión");
+
     }//GEN-LAST:event_cajaTextoPesoCaretUpdate
 
     private void cajaTextoPesoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaTextoPesoKeyTyped
@@ -225,44 +246,40 @@ public class InterfazConversorPeso extends javax.swing.JFrame {
         if((car<'0' || car>'9') && (car<',' || car>'.')) evt.consume();
     }//GEN-LAST:event_cajaTextoPesoKeyTyped
 
-    private void comboConversionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboConversionActionPerformed
-       try{
-           distribuidor.validación(cajaTextoPeso);
-        double temperaturaUsuario = Double.parseDouble(cajaTextoPeso.getText());
-        int prueba = (int) comboConversion.getSelectedIndex();
-       switch(prueba){
-            case 0:
-                break;
-            case 1:
-                txtResultado.setText(metodo.convertirCentigradosFahrenheit(temperaturaUsuario));
-                break;
-            case 2:
-                txtResultado.setText(metodo.convertirCentigradosKelvins(temperaturaUsuario));
-                break;
-            case 3:
-                txtResultado.setText(metodo.convertirFahrenheitCentigrados(temperaturaUsuario));
-                break;
-            case 4:
-                txtResultado.setText(metodo.convertirFahrenheitKelvins(temperaturaUsuario));
-                break;
-            case 5:
-                txtResultado.setText(metodo.convertirKelvinsCentigrados(temperaturaUsuario));
-                break;
-            case 6:
-                txtResultado.setText(metodo.convertirKelvinsFahrenheit(temperaturaUsuario));
-                break;
-       }
-       }catch (ExceptionCajaVacia e){
-            e.printStackTrace();           
-       }catch (NumberFormatException e){
-            e.printStackTrace();           
-            JOptionPane.showMessageDialog(null, "Se ingreo un valor Invalido");
-       }
-    }//GEN-LAST:event_comboConversionActionPerformed
-
     private void btnCopiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCopiarActionPerformed
             distribuidor.copiarPortapapeles(txtResultado);
     }//GEN-LAST:event_btnCopiarActionPerformed
+
+    private void comboConversion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboConversion2ActionPerformed
+        try{
+            distribuidor.validación(cajaTextoPeso);
+            metodo.obtenerDatos(comboConversion,comboConversion2 , cajaTextoPeso, txtResultado);
+        }catch (ExceptionCajaVacia e){
+            e.printStackTrace();
+        }catch (NumberFormatException e){
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Se ingreo un valor Invalido");
+        }
+    }//GEN-LAST:event_comboConversion2ActionPerformed
+
+    private void comboConversionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboConversionActionPerformed
+        try{
+            distribuidor.validación(cajaTextoPeso);
+            metodo.obtenerDatos(comboConversion,comboConversion2 , cajaTextoPeso, txtResultado);
+        }catch (ExceptionCajaVacia e){
+            e.printStackTrace();
+        }catch (NumberFormatException e){
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Se ingreo un valor Invalido");
+        }
+    }//GEN-LAST:event_comboConversionActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+            int indexCombo1 = comboConversion.getSelectedIndex();
+            int indexCombo2 = comboConversion2.getSelectedIndex();
+            comboConversion.setSelectedIndex(indexCombo2);
+            comboConversion2.setSelectedIndex(indexCombo1);
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /* 
     ° C -> ° F
@@ -337,8 +354,10 @@ public class InterfazConversorPeso extends javax.swing.JFrame {
     private javax.swing.JToggleButton btnRegresar;
     private javax.swing.JTextField cajaTextoPeso;
     private javax.swing.JComboBox<String> comboConversion;
+    private javax.swing.JComboBox<String> comboConversion2;
     private javax.swing.JLabel copyRight;
     private javax.swing.JTextArea introduccion;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane;
     private javax.swing.JLabel labelPeso;
     private javax.swing.JLabel labelResultado;

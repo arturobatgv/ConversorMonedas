@@ -127,6 +127,11 @@ HerramientasFormularios distribuidor = new HerramientasFormularios();
 
         backgroundPeso.setBackground(new java.awt.Color(217, 217, 217));
         backgroundPeso.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        backgroundPeso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backgroundPesoMouseClicked(evt);
+            }
+        });
         backgroundPeso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         imagenPeso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/convertidorPesoPrincipal.png"))); // NOI18N
@@ -195,6 +200,10 @@ HerramientasFormularios distribuidor = new HerramientasFormularios();
     private void backgroundTemperaturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backgroundTemperaturaMouseClicked
         this.distribuidor.getOtherInterfaz(this, new InterfazConversorTemperatura());
     }//GEN-LAST:event_backgroundTemperaturaMouseClicked
+
+    private void backgroundPesoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backgroundPesoMouseClicked
+        this.distribuidor.getOtherInterfaz(this, new InterfazConversorPeso());
+    }//GEN-LAST:event_backgroundPesoMouseClicked
 
     /**
      * @param args the command line arguments

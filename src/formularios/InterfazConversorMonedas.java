@@ -180,11 +180,11 @@ public class InterfazConversorMonedas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnPesoMexicanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesoMexicanoActionPerformed
-        ditribuidor.getOtherInterfaz(this,new InterfazConversorPesoOtraMoneda());
+        ditribuidor.getOtherInterfaz(this,new InterfazConversorPesosOtraMoneda());
     }//GEN-LAST:event_btnPesoMexicanoActionPerformed
 
     private void btnOtramonedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOtramonedaActionPerformed
-         ditribuidor.getOtherInterfaz(this,new InterfazConversorOtraMonedaPeso());
+         ditribuidor.getOtherInterfaz(this,new InterfazConversorOtraMonedaPesos());
     }//GEN-LAST:event_btnOtramonedaActionPerformed
 
     /**
