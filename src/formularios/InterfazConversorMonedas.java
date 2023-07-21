@@ -5,7 +5,7 @@
  */
 package formularios;
 
-import clases.ConversorMonedas;
+import clases.Monedas;
 import clases.HerramientasFormularios;
 
 
@@ -16,8 +16,8 @@ import clases.HerramientasFormularios;
  * @author Sergio
  */
 public class InterfazConversorMonedas extends javax.swing.JFrame {
-    HerramientasFormularios ditribuidor = new HerramientasFormularios();
-    ConversorMonedas metodo = new ConversorMonedas();
+    HerramientasFormularios distribuidor = new HerramientasFormularios();
+    Monedas metodo = new Monedas();
     /**
      * Creates new form Bienvenida
      */
@@ -26,7 +26,7 @@ public class InterfazConversorMonedas extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         jScrollPane.setBorder(null);
-        setIconImage(ditribuidor.getIconImage());
+        setIconImage(distribuidor.getIconImage());
     }
 
     /**
@@ -176,15 +176,15 @@ public class InterfazConversorMonedas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        ditribuidor.getOtherInterfaz(this,new InterfazPrincipal());
+        distribuidor.btnRegresar(this, new InterfazPrincipal());
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnPesoMexicanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesoMexicanoActionPerformed
-        ditribuidor.getOtherInterfaz(this,new InterfazConversorPesosOtraMoneda());
+        distribuidor.getOtherInterfaz(this,new InterfazConversorPesosOtraMoneda());
     }//GEN-LAST:event_btnPesoMexicanoActionPerformed
 
     private void btnOtramonedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOtramonedaActionPerformed
-         ditribuidor.getOtherInterfaz(this,new InterfazConversorOtraMonedaPesos());
+         distribuidor.getOtherInterfaz(this,new InterfazConversorOtraMonedaPesos());
     }//GEN-LAST:event_btnOtramonedaActionPerformed
 
     /**

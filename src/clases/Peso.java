@@ -15,7 +15,7 @@ import javax.swing.JTextField;
  *
  * @author Sergio
  */
-public class conversorPeso {
+public class Peso {
     public static Map<String, Double> listaConversionesPeso = new HashMap<>();
     static {
         //lista Kilogramos
@@ -70,7 +70,7 @@ public class conversorPeso {
         if(resultadoConversion == 0.0){
         labelResultado.setText("En espera de seleccionar una conversión");
         }else {
-        labelResultado.setText(String.valueOf(resultadoConversion));
+        labelResultado.setText(String.valueOf(resultadoConversion) + " " + datoConversion);
         }
     }
    

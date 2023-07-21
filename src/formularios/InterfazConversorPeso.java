@@ -7,7 +7,7 @@ package formularios;
 
 import Exceptions.ExceptionCajaVacia;
 import clases.HerramientasFormularios;
-import clases.conversorPeso;
+import clases.Peso;
 import clases.TextGris;
 import javax.swing.JOptionPane;
 
@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
 public class InterfazConversorPeso extends javax.swing.JFrame {
    
     HerramientasFormularios distribuidor = new HerramientasFormularios();
-    conversorPeso metodo = new conversorPeso();
+    Peso metodo = new Peso();
     /**
      * Creates new form Bienvenida
      */
@@ -65,7 +65,7 @@ public class InterfazConversorPeso extends javax.swing.JFrame {
         lineaResultado = new javax.swing.JSeparator();
         lineaTemperatura = new javax.swing.JSeparator();
         comboConversion = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
+        inverso = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Conversor de Temperatura");
@@ -202,13 +202,13 @@ public class InterfazConversorPeso extends javax.swing.JFrame {
         });
         background.add(comboConversion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 170, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inverso.png"))); // NOI18N
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        inverso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inverso.png"))); // NOI18N
+        inverso.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                inversoMouseClicked(evt);
             }
         });
-        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 40, 30));
+        background.add(inverso, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 40, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -223,12 +223,14 @@ public class InterfazConversorPeso extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        getAccessibleContext().setAccessibleName("Conversor de Peso");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-       distribuidor.getOtherInterfaz(this,new InterfazPrincipal());
+        distribuidor.btnRegresar(this, new InterfazPrincipal());
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void cajaTextoPesoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cajaTextoPesoMouseClicked
@@ -274,12 +276,12 @@ public class InterfazConversorPeso extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_comboConversionActionPerformed
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void inversoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inversoMouseClicked
             int indexCombo1 = comboConversion.getSelectedIndex();
             int indexCombo2 = comboConversion2.getSelectedIndex();
             comboConversion.setSelectedIndex(indexCombo2);
             comboConversion2.setSelectedIndex(indexCombo1);
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_inversoMouseClicked
 
     /* 
     ° C -> ° F
@@ -357,7 +359,7 @@ public class InterfazConversorPeso extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboConversion2;
     private javax.swing.JLabel copyRight;
     private javax.swing.JTextArea introduccion;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel inverso;
     private javax.swing.JScrollPane jScrollPane;
     private javax.swing.JLabel labelPeso;
     private javax.swing.JLabel labelResultado;

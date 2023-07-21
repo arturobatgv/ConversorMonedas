@@ -6,7 +6,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import org.json.JSONObject;
 
-public class ConversorMonedas {
+public class Monedas {
     private static final String API_KEY = "523269dbb2ab41adb0939034057a509b"; // Reemplaza con tu clave de API 
     private double conversionRateMXN;
     HerramientasFormularios distribuidor = new HerramientasFormularios();

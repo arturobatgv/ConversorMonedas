@@ -6,7 +6,7 @@
 package formularios;
 
 import Exceptions.ExceptionCajaVacia;
-import clases.ConversorMonedas;
+import clases.Monedas;
 import clases.HerramientasFormularios;
 import clases.TextGris;
 import javax.swing.JOptionPane;
@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
 public class InterfazConversorOtraMonedaPesos extends javax.swing.JFrame {
    
     HerramientasFormularios distribuidor = new HerramientasFormularios();
-    ConversorMonedas metodo = new ConversorMonedas();
+    Monedas metodo = new Monedas();
     /**
      * Creates new form Bienvenida
      */
@@ -218,7 +218,7 @@ public class InterfazConversorOtraMonedaPesos extends javax.swing.JFrame {
 
     
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-       distribuidor.getOtherInterfaz(this,new InterfazConversorMonedas());
+        distribuidor.btnRegresar(this, new InterfazConversorMonedas());
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void cajaTextoCantidadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cajaTextoCantidadMouseClicked

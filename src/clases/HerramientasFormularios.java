@@ -16,6 +16,8 @@ import javax.swing.JTextField;
 import Exceptions.ExceptionCajaVacia;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -59,5 +61,17 @@ public class HerramientasFormularios {
             Clipboard portapapels =  Toolkit.getDefaultToolkit().getSystemClipboard();
             portapapels.setContents(seleccion, null);
         }
+        
+    public void btnRegresar(JFrame cerrar, JFrame abrir ){
+        Object[] opciones ={"Si","No","Salir del programa"};
+       ImageIcon icono = new ImageIcon("src/imagenes/sg10.png");
+        int respuesta = JOptionPane.showOptionDialog(null, "¿Estás seguro de Regresar?", "Confirmar", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,icono,opciones, opciones[2]);
+        
+       if(JOptionPane.YES_OPTION == respuesta ){
+              getOtherInterfaz(cerrar,abrir);}
+       if(JOptionPane.CANCEL_OPTION == respuesta){
+            System.exit(0);
+       }
+    }
     
 }

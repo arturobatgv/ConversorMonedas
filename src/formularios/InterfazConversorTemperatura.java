@@ -9,6 +9,7 @@ import Exceptions.ExceptionCajaVacia;
 import clases.HerramientasFormularios;
 import clases.Temperatura;
 import clases.TextGris;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
     
@@ -208,7 +209,7 @@ public class InterfazConversorTemperatura extends javax.swing.JFrame {
 
     
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-       distribuidor.getOtherInterfaz(this,new InterfazPrincipal());
+        distribuidor.btnRegresar(this, new InterfazPrincipal());
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void cajaTextoTemperaturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cajaTextoTemperaturaMouseClicked

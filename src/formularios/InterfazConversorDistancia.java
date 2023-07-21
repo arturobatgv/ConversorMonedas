@@ -6,9 +6,10 @@
 package formularios;
 
 import Exceptions.ExceptionCajaVacia;
-import clases.Monedas;
 import clases.HerramientasFormularios;
+import clases.Distancia;
 import clases.TextGris;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
     
@@ -19,20 +20,20 @@ import javax.swing.JOptionPane;
  *
  * @author Sergio
  */
-public class InterfazConversorPesosOtraMoneda extends javax.swing.JFrame {
+public class InterfazConversorDistancia extends javax.swing.JFrame {
    
     HerramientasFormularios distribuidor = new HerramientasFormularios();
-    Monedas metodo = new Monedas();
+    Distancia metodo = new Distancia();
     /**
      * Creates new form Bienvenida
      */
-    public InterfazConversorPesosOtraMoneda() {
+    public InterfazConversorDistancia() {
         
         initComponents();
         this.setLocationRelativeTo(null);
         jScrollPane.setBorder(null);
         setIconImage(distribuidor.getIconImage());
-        new TextGris("  Aquí", cajaTextoPesos);
+        new TextGris("  Aquí", cajaTextoDistancia);
     }
 
     /**
@@ -52,21 +53,22 @@ public class InterfazConversorPesosOtraMoneda extends javax.swing.JFrame {
         btnCopiar = new javax.swing.JToggleButton();
         btnRegresar = new javax.swing.JToggleButton();
         copyRight = new javax.swing.JLabel();
-        backgroundBilletes = new javax.swing.JLabel();
+        backgroundDistancia = new javax.swing.JLabel();
         bienvenida = new javax.swing.JLabel();
         jScrollPane = new javax.swing.JScrollPane();
         introduccion = new javax.swing.JTextArea();
-        labelPesos = new javax.swing.JLabel();
-        comboConversion = new javax.swing.JComboBox<>();
+        labelDistancia = new javax.swing.JLabel();
+        comboConversion2 = new javax.swing.JComboBox<>();
         labelResultado = new javax.swing.JLabel();
-        cajaSigno = new javax.swing.JTextField();
-        cajaTextoPesos = new javax.swing.JTextField();
+        cajaTextoDistancia = new javax.swing.JTextField();
         txtResultado = new javax.swing.JLabel();
         lineaResultado = new javax.swing.JSeparator();
-        linea = new javax.swing.JSeparator();
+        lineaDistancia = new javax.swing.JSeparator();
+        comboConversion = new javax.swing.JComboBox<>();
+        inverso = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Conversor de Monedas");
+        setTitle("Conversor de Temperatura");
         setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         setResizable(false);
 
@@ -81,8 +83,8 @@ public class InterfazConversorPesosOtraMoneda extends javax.swing.JFrame {
         labelTituloProgram.setForeground(new java.awt.Color(255, 255, 255));
         labelTituloProgram.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelTituloProgram.setLabelFor(background);
-        labelTituloProgram.setText("Conversor de Pesos");
-        backgroundBlackTitulo.add(labelTituloProgram, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
+        labelTituloProgram.setText("Conversor de Distancia");
+        backgroundBlackTitulo.add(labelTituloProgram, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, 30));
 
         background.add(backgroundBlackTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 210, 30));
 
@@ -98,13 +100,14 @@ public class InterfazConversorPesosOtraMoneda extends javax.swing.JFrame {
         btnCopiar.setFont(new java.awt.Font("Roboto Black", 1, 11)); // NOI18N
         btnCopiar.setForeground(new java.awt.Color(255, 255, 255));
         btnCopiar.setText("Copiar");
+        btnCopiar.setFocusPainted(false);
         btnCopiar.setFocusable(false);
         btnCopiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCopiarActionPerformed(evt);
             }
         });
-        background.add(btnCopiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 100, 30));
+        background.add(btnCopiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 100, 30));
 
         btnRegresar.setBackground(new java.awt.Color(255, 36, 0));
         btnRegresar.setFont(new java.awt.Font("Roboto Black", 1, 11)); // NOI18N
@@ -119,15 +122,15 @@ public class InterfazConversorPesosOtraMoneda extends javax.swing.JFrame {
         background.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 100, 30));
 
         copyRight.setFont(new java.awt.Font("Roboto Light", 2, 11)); // NOI18N
-        copyRight.setForeground(new java.awt.Color(255, 255, 255));
+        copyRight.setForeground(new java.awt.Color(51, 255, 204));
         copyRight.setText("© Copyrigth Sergio González - 2023");
-        background.add(copyRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, -1));
+        background.add(copyRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 360, -1, 20));
 
-        backgroundBilletes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/billetes.png"))); // NOI18N
-        background.add(backgroundBilletes, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 260, 330));
+        backgroundDistancia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/backgroundDistancia.png"))); // NOI18N
+        background.add(backgroundDistancia, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 260, 380));
 
         bienvenida.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
-        bienvenida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pesoOtramoneda.png"))); // NOI18N
+        bienvenida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ConversorDistancialogo.png"))); // NOI18N
         bienvenida.setText(" ¡BIENVENIDO!");
         background.add(bienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
 
@@ -135,7 +138,7 @@ public class InterfazConversorPesosOtraMoneda extends javax.swing.JFrame {
         introduccion.setColumns(20);
         introduccion.setFont(new java.awt.Font("Roboto Medium", 3, 12)); // NOI18N
         introduccion.setLineWrap(true);
-        introduccion.setText("Programa que convierte pesos mexicanos a otro tipo de moneda.");
+        introduccion.setText("Programa que convierte una medición de distancia a otro tipo de medición de distancia.");
         introduccion.setToolTipText("");
         introduccion.setWrapStyleWord(true);
         introduccion.setBorder(null);
@@ -144,64 +147,70 @@ public class InterfazConversorPesosOtraMoneda extends javax.swing.JFrame {
         introduccion.setRequestFocusEnabled(false);
         jScrollPane.setViewportView(introduccion);
 
-        background.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 360, -1));
+        background.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 360, -1));
 
-        labelPesos.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        labelPesos.setText("Ingresa los pesos mexicanos:");
-        background.add(labelPesos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, 20));
+        labelDistancia.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        labelDistancia.setText("Ingresa el peso a convertir:");
+        background.add(labelDistancia, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, 20));
+
+        comboConversion2.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        comboConversion2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una conversión", "kilometros", "metros", "centimetros", "milimetros", "pulgadas", "pies", "yardas", "millas" }));
+        comboConversion2.setFocusable(false);
+        comboConversion2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboConversion2ActionPerformed(evt);
+            }
+        });
+        background.add(comboConversion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 170, 30));
+
+        labelResultado.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
+        labelResultado.setForeground(new java.awt.Color(255, 51, 51));
+        labelResultado.setText("Resultado:");
+        background.add(labelResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+
+        cajaTextoDistancia.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        cajaTextoDistancia.setBorder(null);
+        cajaTextoDistancia.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        cajaTextoDistancia.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                cajaTextoDistanciaCaretUpdate(evt);
+            }
+        });
+        cajaTextoDistancia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cajaTextoDistanciaMouseClicked(evt);
+            }
+        });
+        cajaTextoDistancia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cajaTextoDistanciaKeyTyped(evt);
+            }
+        });
+        background.add(cajaTextoDistancia, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 210, 20));
+
+        txtResultado.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        txtResultado.setText("En espera de ingresar algun valor a convertir");
+        background.add(txtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 300, 20));
+        background.add(lineaResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 250, 20));
+        background.add(lineaDistancia, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 170, 20));
 
         comboConversion.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        comboConversion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una conversión", "MXN -> USD", "MXN -> EUR", "MXN -> LIBRA", "MXN -> YEN", "MXN -> Won SK" }));
+        comboConversion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una conversión", "kilometros", "metros", "centimetros", "milimetros", "pulgadas", "pies", "yardas", "millas" }));
         comboConversion.setFocusable(false);
         comboConversion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboConversionActionPerformed(evt);
             }
         });
-        background.add(comboConversion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 200, 30));
+        background.add(comboConversion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 170, 30));
 
-        labelResultado.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
-        labelResultado.setForeground(new java.awt.Color(255, 0, 51));
-        labelResultado.setText("Resultado:");
-        background.add(labelResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
-
-        cajaSigno.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        cajaSigno.setText("$");
-        cajaSigno.setBorder(null);
-        cajaSigno.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        cajaSigno.setFocusable(false);
-        cajaSigno.addMouseListener(new java.awt.event.MouseAdapter() {
+        inverso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inverso.png"))); // NOI18N
+        inverso.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cajaSignoMouseClicked(evt);
+                inversoMouseClicked(evt);
             }
         });
-        background.add(cajaSigno, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 10, 20));
-
-        cajaTextoPesos.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        cajaTextoPesos.setBorder(null);
-        cajaTextoPesos.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        cajaTextoPesos.addCaretListener(new javax.swing.event.CaretListener() {
-            public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                cajaTextoPesosCaretUpdate(evt);
-            }
-        });
-        cajaTextoPesos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cajaTextoPesosMouseClicked(evt);
-            }
-        });
-        cajaTextoPesos.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                cajaTextoPesosKeyTyped(evt);
-            }
-        });
-        background.add(cajaTextoPesos, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 170, 20));
-
-        txtResultado.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        txtResultado.setText("En espera de ingresar algun valor a convertir");
-        background.add(txtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 300, 20));
-        background.add(lineaResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 250, 20));
-        background.add(linea, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 190, 20));
+        background.add(inverso, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 40, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -211,73 +220,70 @@ public class InterfazConversorPesosOtraMoneda extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        getAccessibleContext().setAccessibleName("Conversor de Distancia");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-            distribuidor.btnRegresar(this, new InterfazConversorMonedas());
+        distribuidor.btnRegresar(this, new InterfazPrincipal());
     }//GEN-LAST:event_btnRegresarActionPerformed
 
-    private void cajaTextoPesosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cajaTextoPesosMouseClicked
-            cajaTextoPesos.setText("");
+    private void cajaTextoDistanciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cajaTextoDistanciaMouseClicked
+            cajaTextoDistancia.setText("");
             txtResultado.setText("En espera de ingresar algun valor a convertir"); 
-    }//GEN-LAST:event_cajaTextoPesosMouseClicked
+    }//GEN-LAST:event_cajaTextoDistanciaMouseClicked
 
-    private void cajaTextoPesosCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_cajaTextoPesosCaretUpdate
+    private void cajaTextoDistanciaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_cajaTextoDistanciaCaretUpdate
         txtResultado.setText("En espera de seleccionar una conversión");
-    }//GEN-LAST:event_cajaTextoPesosCaretUpdate
 
-    private void cajaTextoPesosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaTextoPesosKeyTyped
+    }//GEN-LAST:event_cajaTextoDistanciaCaretUpdate
+
+    private void cajaTextoDistanciaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaTextoDistanciaKeyTyped
         char car = evt.getKeyChar();
         if((car<'0' || car>'9') && (car<',' || car>'.')) evt.consume();
-    }//GEN-LAST:event_cajaTextoPesosKeyTyped
-
-    private void comboConversionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboConversionActionPerformed
-       try{
-        distribuidor.validación(cajaTextoPesos);
-        double pesosUsuario = Double.parseDouble(cajaTextoPesos.getText());
-        int prueba = (int) comboConversion.getSelectedIndex();
-       switch(prueba){
-            case 0:
-                break;
-            case 1:
-                txtResultado.setText(metodo.obtenerConversionDolar("USD","MXN",pesosUsuario));
-                break;
-            case 2:
-                txtResultado.setText(metodo.obtenerConversionDolar("USD","EUR",pesosUsuario));
-                break;
-            case 3:
-                txtResultado.setText(metodo.obtenerConversionDolar("USD","GBP",pesosUsuario));
-                break;
-            case 4:
-                txtResultado.setText(metodo.obtenerConversionDolar("USD","JPY",pesosUsuario));
-                break;
-            case 5:
-                
-                txtResultado.setText(metodo.obtenerConversionDolar("USD","KRW",pesosUsuario));
-                break;
-       }
-       }catch (ExceptionCajaVacia e){
-            e.printStackTrace();           
-       }catch (NumberFormatException e){
-            e.printStackTrace();           
-            JOptionPane.showMessageDialog(null, "Se ingreo un valor Invalido");
-    }
- 
-    }//GEN-LAST:event_comboConversionActionPerformed
+    }//GEN-LAST:event_cajaTextoDistanciaKeyTyped
 
     private void btnCopiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCopiarActionPerformed
-          distribuidor.copiarPortapapeles(txtResultado);
+            distribuidor.copiarPortapapeles(txtResultado);
     }//GEN-LAST:event_btnCopiarActionPerformed
 
-    private void cajaSignoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cajaSignoMouseClicked
-            cajaTextoPesos.setText("");
-            txtResultado.setText("En espera de ingresar algun valor a convertir"); 
-    }//GEN-LAST:event_cajaSignoMouseClicked
+    private void comboConversion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboConversion2ActionPerformed
+        try{
+            distribuidor.validación(cajaTextoDistancia);
+            metodo.obtenerDatos(comboConversion,comboConversion2 , cajaTextoDistancia, txtResultado);
+        }catch (ExceptionCajaVacia e){
+            e.printStackTrace();
+        }catch (NumberFormatException e){
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Se ingreo un valor Invalido");
+        }
+    }//GEN-LAST:event_comboConversion2ActionPerformed
+
+    private void comboConversionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboConversionActionPerformed
+        try{
+            distribuidor.validación(cajaTextoDistancia);
+            metodo.obtenerDatos(comboConversion,comboConversion2 , cajaTextoDistancia, txtResultado);
+        }catch (ExceptionCajaVacia e){
+            e.printStackTrace();
+        }catch (NumberFormatException e){
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Se ingreo un valor Invalido");
+        }
+    }//GEN-LAST:event_comboConversionActionPerformed
+
+    private void inversoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inversoMouseClicked
+            int indexCombo1 = comboConversion.getSelectedIndex();
+            int indexCombo2 = comboConversion2.getSelectedIndex();
+            comboConversion.setSelectedIndex(indexCombo2);
+            comboConversion2.setSelectedIndex(indexCombo1);
+    }//GEN-LAST:event_inversoMouseClicked
 
     /* 
     ° C -> ° F
@@ -306,13 +312,13 @@ public class InterfazConversorPesosOtraMoneda extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InterfazConversorPesosOtraMoneda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazConversorDistancia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InterfazConversorPesosOtraMoneda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazConversorDistancia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InterfazConversorPesosOtraMoneda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazConversorDistancia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InterfazConversorPesosOtraMoneda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazConversorDistancia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -350,7 +356,7 @@ public class InterfazConversorPesosOtraMoneda extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfazConversorPesosOtraMoneda().setVisible(true);
+                new InterfazConversorDistancia().setVisible(true);
                 
                 
             }
@@ -360,22 +366,23 @@ public class InterfazConversorPesosOtraMoneda extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
-    private javax.swing.JLabel backgroundBilletes;
     private javax.swing.JPanel backgroundBlack;
     private javax.swing.JPanel backgroundBlackTitulo;
+    private javax.swing.JLabel backgroundDistancia;
     private javax.swing.JLabel bienvenida;
     private javax.swing.JToggleButton btnCopiar;
     private javax.swing.JToggleButton btnRegresar;
-    private javax.swing.JTextField cajaSigno;
-    private javax.swing.JTextField cajaTextoPesos;
+    private javax.swing.JTextField cajaTextoDistancia;
     private javax.swing.JComboBox<String> comboConversion;
+    private javax.swing.JComboBox<String> comboConversion2;
     private javax.swing.JLabel copyRight;
     private javax.swing.JTextArea introduccion;
+    private javax.swing.JLabel inverso;
     private javax.swing.JScrollPane jScrollPane;
-    private javax.swing.JLabel labelPesos;
+    private javax.swing.JLabel labelDistancia;
     private javax.swing.JLabel labelResultado;
     private javax.swing.JLabel labelTituloProgram;
-    private javax.swing.JSeparator linea;
+    private javax.swing.JSeparator lineaDistancia;
     private javax.swing.JSeparator lineaResultado;
     private javax.swing.JLabel logoDev;
     private javax.swing.JLabel txtResultado;

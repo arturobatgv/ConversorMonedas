@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package formularios;
-import clases.ConversorMonedas;
+import clases.Monedas;
 import clases.HerramientasFormularios;
 
 
@@ -145,6 +145,11 @@ HerramientasFormularios distribuidor = new HerramientasFormularios();
 
         backgroundMedicion.setBackground(new java.awt.Color(255, 87, 87));
         backgroundMedicion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        backgroundMedicion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backgroundMedicionMouseClicked(evt);
+            }
+        });
         backgroundMedicion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         imagenMedicion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/convertidorMedicionPrincipal.png"))); // NOI18N
@@ -204,6 +209,10 @@ HerramientasFormularios distribuidor = new HerramientasFormularios();
     private void backgroundPesoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backgroundPesoMouseClicked
         this.distribuidor.getOtherInterfaz(this, new InterfazConversorPeso());
     }//GEN-LAST:event_backgroundPesoMouseClicked
+
+    private void backgroundMedicionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backgroundMedicionMouseClicked
+       this.distribuidor.getOtherInterfaz(this, new InterfazConversorDistancia());
+    }//GEN-LAST:event_backgroundMedicionMouseClicked
 
     /**
      * @param args the command line arguments
