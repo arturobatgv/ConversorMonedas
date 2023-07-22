@@ -32,7 +32,7 @@ La aplicación de escritorio <strong>Converter</strong> está en funcionamiento,
 
 <p>Al entrar al programa verás las siguientes Interfaces:</p>
 
-1) **Interfaz Principal**
+1) *ref* **Interfaz Principal**
 
 La interfaz principal de **Converter** muestra cuatro recuadros que contienen los cuatro conversores que contiene el programa. Para empezar a hacer conversiones, el usuario debe hacer clic en el recuadro del conversor seleccionado.
 <p align="center"><img src="src/imagenes/imagenesReadme/interfazPrincipal.gif"></p>
@@ -63,4 +63,4 @@ Por último, se ha agregado un botón de color rojo que permite al usuario regre
 
 3) **Interfaz Peso**
 
-Esta interfaz funciona de misma forma que la [interfaz Distancia][1] esta creada con la mism lógica, puedes revisar 
+Esta interfaz funciona de misma forma que la [interfaz Distancia][#ref] esta creada con la mism lógica, puedes revisar 
