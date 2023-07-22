@@ -37,4 +37,16 @@ La aplicación de escritorio <strong>Converter</strong> está en funcionamiento,
 La interfaz principal de **Converter** muestra cuatro recuadros que contienen los cuatro conversores que contiene el programa. Para empezar a hacer conversiones, el usuario debe hacer clic en el recuadro del conversor seleccionado.
 <p align="center"><img src="src/imagenes/imagenesReadme/interfazPrincipal.gif"></p>
 
+2) **Interfaz Distancia**
 
+En esta interfaz se muestra el conversor de distancia. Para convertir un peso, el usuario debe ingresar el peso a convertir y seleccionar la conversión deseada haciendo clic en el menú desplegable que contiene las unidades de medida de peso (kilogramos, gramos, miligramos, libras, onzas y toneladas).
+
+<p align="center"><img src="src/imagenes/imagenesReadme/Desplieguecombo.gif"></p>
+
+Una vez seleccionada la primera unidad de medida, el usuario debe seleccionar la segunda unidad de medida en el otro menú desplegable. El resultado se mostrará inmediatamente.
+
+<p align="center"><img src="src/imagenes/imagenesReadme/resultadoDistancia.gif"></p>
+
+Es importante mencionar que el conversor valida que el usuario haya ingresado un valor numérico para convertir. Si el usuario no ha ingresado ningún valor o si el valor ingresado no es numérico, se mostrará una alerta.
+
+<p align="center"><img src="src/imagenes/imagenesReadme/errorDistancia.png"></p>
