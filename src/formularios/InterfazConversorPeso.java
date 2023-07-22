@@ -68,7 +68,7 @@ public class InterfazConversorPeso extends javax.swing.JFrame {
         inverso = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Conversor de Temperatura");
+        setTitle("Conversor de Peso");
         setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         setResizable(false);
 

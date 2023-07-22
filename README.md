@@ -23,4 +23,10 @@
 
 ## Estado del proyecto
 
-La aplicación de escritorio <strong>Converter</strong> está en funcionamiento, pero se encuentra en espera de actualizaciones. Se está trabajando en mejorar el código para lanzar nuevas versiones 👨🏼‍💻👨🏼‍🔧. La API utilizada para extraer los valores de las monedas de todo el mundo al momento se llama <em>currencyfreaks.api</em>. Desafortunadamente, esta API tiene una licencia gratuita que restringe muchos servicios. Por ejemplo, solo te otorga 1000 llamadas a la API y actualiza las monedas cada 12 horas ⚠️. Esto significa que va retrasado por 12 horas en la actualización de las monedas. Además, solo te otorga las consultas como moneda base los USD, por lo que se tuvo que implementar diferentes algoritmos para que te retorne los cambios de monedas especificados en el desafío. Esto afecta el rendimiento del proyecto 😔.
+La aplicación de escritorio <strong>Converter</strong> está en funcionamiento, pero se encuentra en espera de actualizaciones. Se está trabajando en mejorar el código para lanzar nuevas versiones 👨🏼‍💻👨🏼‍🔧. La API utilizada para extraer los valores de las monedas de todo el mundo al momento se llama <em>currencyfreaks.api</em>. Desafortunadamente, esta API tiene una licencia gratuita que restringe muchos servicios. Por ejemplo, solo te otorga 1000 llamadas a la API y actualiza las monedas cada 12 horas ⚠️. Esto significa que va retrasado por 12 horas en la actualización de las monedas. Además, solo te otorga las consultas como moneda base los USD, por lo que se tuvo que implementar diferentes algoritmos para que te retorne los cambios de monedas especificados en el desafío. Esto afecta el performance del proyecto 😔.
+
+## Características de la aplicación y demostración
+<strong>Converter</strong> cuenta con 7 interfaces que tienen un diseño amigable con el usuario, con indicaciones claras y concisas, flexibles y atractivas para el usuario. Estas interfaces las puedes utilizar para navegar dentro de la aplicación la cual te brinda 4 distintos tipos de conversores.
+
+<p align="center"><img src="src/imagenes/imagenesReadme/interfaces.gif"></p>
+
