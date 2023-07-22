@@ -50,3 +50,13 @@ Una vez seleccionada la primera unidad de medida, el usuario debe seleccionar la
 Es importante mencionar que el conversor valida que el usuario haya ingresado un valor numérico para convertir. Si el usuario no ha ingresado ningún valor o si el valor ingresado no es numérico, se mostrará una alerta.
 
 <p align="center"><img src="src/imagenes/imagenesReadme/errorDistancia.png"></p>
+
+Además, se ha agregado un botón de inversión que permite cambiar las unidades dev medida de forma inversa para convertir en la dirección opuesta.
+
+<p align="center"><img src="src/imagenes/imagenesReadme/inversionDistancia.gif"></p>
+
+Si el usuario desea copiar el resultado de la conversión, puede hacerlo haciendo clic en el botón “Copiar”. El resultado se copiará automáticamente al portapapeles.
+
+Por último, se ha agregado un botón de color rojo que permite al usuario regresar a la interfaz principal en caso de que desee experimentar con otros conversores. Al hacer clic en el botón, aparecerá una pantalla emergente que le pedirá al usuario que confirme si desea regresar a la interfaz principal. Si el usuario desea quedarse en el conversor actual, puede hacer clic en “No” o salir del programa.
+
+<p align="center"><img src="src/imagenes/imagenesReadme/regresarDistancia.png"></p>
