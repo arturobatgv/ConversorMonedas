@@ -34,6 +34,7 @@ La aplicación de escritorio <strong>Converter</strong> está en funcionamiento,
 
 1) **Interfaz Principal**
 
+La interfaz principal de **Converter** muestra cuatro recuadros que contienen los cuatro conversores que contiene el programa. Para empezar a hacer conversiones, el usuario debe hacer clic en el recuadro del conversor seleccionado.
 <p align="center"><img src="src/imagenes/imagenesReadme/interfazPrincipal.gif"></p>
 
-La interfaz principal de Converter muestra cuatro recuadros que contienen los cuatro conversores que contiene el programa. Para empezar a hacer conversiones, el usuario debe hacer clic en el recuadro del conversor seleccionado.
+
