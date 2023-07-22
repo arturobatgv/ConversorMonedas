@@ -28,5 +28,5 @@ La aplicación de escritorio <strong>Converter</strong> está en funcionamiento,
 ## Características de la aplicación y demostración
 <strong>Converter</strong> cuenta con 7 interfaces que tienen un diseño amigable con el usuario, con indicaciones claras y concisas, flexibles y atractivas para el usuario. Estas interfaces las puedes utilizar para navegar dentro de la aplicación la cual te brinda 4 distintos tipos de conversores.
 
-<p align="center"><img src="src/imagenes/imagenesReadme/interfaces.gif"></p>
+<p align="center"><img src="src/imagenes/imagenesReadme/interfaces.gif" height="70" width="70"></p>
 
