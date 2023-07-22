@@ -30,3 +30,6 @@ La aplicación de escritorio <strong>Converter</strong> está en funcionamiento,
 
 <p align="center"><img src="src/imagenes/imagenesReadme/interfaces.gif"></p>
 
+Al entrar al programa verás las siguientes Interfaces:
+
+1) **Interfaz Principal**
