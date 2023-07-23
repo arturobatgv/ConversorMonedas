@@ -103,6 +103,6 @@ Por último tenemos la interfaz temperatura, esta de igual forma es parecida a l
 - Java Swing
 - NetBeans
 
-## Personas Contribuyentes
+## Autores
 
-| [<img src="https://avatars.githubusercontent.com/u/129329847?s=400&u=c73b589500573ba51c005eca5ca88dee646bcceb&v=4" width=115><br><sub>Sergio Arturo González Vera</sub>](https://github.com/arturobatgv) |
+[<img src="https://avatars.githubusercontent.com/u/129329847?s=400&u=c73b589500573ba51c005eca5ca88dee646bcceb&v=4" width=115><br><sub>Sergio Arturo González Vera</sub>](https://github.com/arturobatgv) 
