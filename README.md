@@ -74,3 +74,9 @@ Esta interfaz te permite elegir entre dos tipos de conversores: uno que conviert
 <p align="center"><img src="src/imagenes/imagenesReadme/formularioMoneda.gif"></p>
 
 Cabe mencionar que esta interfaz, también cuenta con un botón [regresar](#regresar) sirve de la misma forma que el anterior formulario.
+
+5)**Interfaz pesos mexicanos a otra moneda**
+
+En la interfaz de conversión de moneda, puedes convertir pesos mexicanos a `dolar`, `euro`, `libra`, `yenes`. Esta interfaz cambia un poco la dinámica de uso que las demás interfaces, ya que solo cuenta con un combo box para realizar las conversiones. Al seleccionar la unidad de la caja de despliegue, realizará la conversión de forma instantánea.
+
+<p align="center"><img src="src/imagenes/imagenesReadme/pesos mexicanos.gif"></p>
