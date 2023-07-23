@@ -75,8 +75,23 @@ Esta interfaz te permite elegir entre dos tipos de conversores: uno que conviert
 
 Cabe mencionar que esta interfaz, también cuenta con un botón [regresar](#regresar) sirve de la misma forma que el anterior formulario.
 
+<a name="pesos"></a>
 5)**Interfaz pesos mexicanos a otra moneda**
 
 En la interfaz de conversión de moneda, puedes convertir pesos mexicanos a `dolar`, `euro`, `libra`, `yenes`. Esta interfaz cambia un poco la dinámica de uso que las demás interfaces, ya que solo cuenta con un combo box para realizar las conversiones. Al seleccionar la unidad de la caja de despliegue, realizará la conversión de forma instantánea.
 
 <p align="center"><img src="src/imagenes/imagenesReadme/pesos mexicanos.gif"></p>
+
+Los demás botones funcionan de igual forma que la [interfaz Distancia](#distancia) esta creada con la misma lógica.
+
+6)**Interfaz otra moneda a pesos mexicanos**
+
+Esta interfaz funciona de misma forma que la [interfaz pesos mexicanos a otra moneda](#pesos) esta creada con la misma lógica. Solo que esta funciona de manera inversa, ya que convierte `dolar`, `euro`, `libra`, `yenes` a `pesos mexicanos`.
+
+<p align="center"><img src="src/imagenes/imagenesReadme/otramoneda.png"></p>
+
+7) **Interfaz temperatura**
+
+Por último tenemos la interfaz temperatura, esta de igual forma es parecida a las demás interfaces, solo que se maneja solo con una lista desplegable como la [interfaz pesos mexicanos a otra moneda](#pesos).
+
+<p align="center"><img src="src/imagenes/imagenesReadme/temperatura.png"></p>
