@@ -40,7 +40,7 @@ La interfaz principal de **Converter** muestra cuatro recuadros que contienen lo
 <a name="distancia"></a>
 2) **Interfaz Distancia** 
 
-En esta interfaz se muestra el conversor de distancia. Para convertir un peso, el usuario debe ingresar el peso a convertir y seleccionar la conversión deseada haciendo clic en el menú desplegable que contiene las unidades de medida de peso (kilogramos, gramos, miligramos, libras, onzas y toneladas).
+En esta interfaz se muestra el conversor de distancia. Para convertir un peso, el usuario debe ingresar el peso a convertir y seleccionar la conversión deseada haciendo clic en el menú desplegable que contiene las unidades de medida de peso (`kilogramos`, `gramos`, `miligramos`, `libras`, `onzas` y `toneladas`).
 
 <p align="center"><img src="src/imagenes/imagenesReadme/Desplieguecombo.gif"></p>
 
@@ -57,7 +57,7 @@ Además, se ha agregado un botón de inversión que permite cambiar las unidades
 <p align="center"><img src="src/imagenes/imagenesReadme/inversionDistancia.gif"></p>
 
 Si el usuario desea copiar el resultado de la conversión, puede hacerlo haciendo clic en el botón “Copiar”. El resultado se copiará automáticamente al portapapeles.
-
+<a name="regresar"></a>
 Por último, se ha agregado un botón de color rojo que permite al usuario regresar a la interfaz principal en caso de que desee experimentar con otros conversores. Al hacer clic en el botón, aparecerá una pantalla emergente que le pedirá al usuario que confirme si desea regresar a la interfaz principal. Si el usuario desea quedarse en el conversor actual, puede hacer clic en “No” o salir del programa.
 
 <p align="center"><img src="src/imagenes/imagenesReadme/regresarDistancia.png"></p>
@@ -66,3 +66,11 @@ Por último, se ha agregado un botón de color rojo que permite al usuario regre
 
 Esta interfaz funciona de misma forma que la [interfaz Distancia](#distancia) esta creada con la misma lógica.
 <p align="center"><img src="src/imagenes/imagenesReadme/peso.png"></p>
+
+4) **Interfaz Moneda**
+
+Esta interfaz te permite elegir entre dos tipos de conversores: uno que convierte `pesos mexicanos` a `dolar`, `euro`, `libra`, `yenes`; y otro que convierte estas monedas a `pesos mexicanos`. Para acceder a estos conversores, solo tienes que hacer clic en los botones que se encuentran en la parte inferior de la pantalla. 
+
+<p align="center"><img src="src/imagenes/imagenesReadme/formularioMoneda.gif"></p>
+
+Cabe mencionar que esta interfaz, también cuenta con un botón [regresar](#regresar) sirve de la misma forma que el anterior formulario.
