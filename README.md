@@ -64,4 +64,5 @@ Por último, se ha agregado un botón de color rojo que permite al usuario regre
 
 3) **Interfaz Peso**
 
-Esta interfaz funciona de misma forma que la [interfaz Distancia](#distancia) esta creada con la mism lógica, puedes revisar 
+Esta interfaz funciona de misma forma que la [interfaz Distancia](#distancia) esta creada con la misma lógica.
+<p align="center"><img src="src/imagenes/imagenesReadme/peso.png"></p>
