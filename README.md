@@ -32,12 +32,13 @@ La aplicación de escritorio <strong>Converter</strong> está en funcionamiento,
 
 <p>Al entrar al programa verás las siguientes Interfaces:</p>
 
-1) *ref* **Interfaz Principal**
+1) **Interfaz Principal**
 
 La interfaz principal de **Converter** muestra cuatro recuadros que contienen los cuatro conversores que contiene el programa. Para empezar a hacer conversiones, el usuario debe hacer clic en el recuadro del conversor seleccionado.
 <p align="center"><img src="src/imagenes/imagenesReadme/interfazPrincipal.gif"></p>
 
 <a name="distancia"></a>
+
 2) **Interfaz Distancia** 
 
 En esta interfaz se muestra el conversor de distancia. Para convertir un peso, el usuario debe ingresar el peso a convertir y seleccionar la conversión deseada haciendo clic en el menú desplegable que contiene las unidades de medida de peso (`kilogramos`, `gramos`, `miligramos`, `libras`, `onzas` y `toneladas`).

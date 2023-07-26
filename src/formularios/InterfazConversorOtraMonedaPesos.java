@@ -151,7 +151,7 @@ public class InterfazConversorOtraMonedaPesos extends javax.swing.JFrame {
         background.add(labelCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, 20));
 
         comboConversion.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        comboConversion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una conversión", "USD -> MXN ", "EUR -> MXN", "LIBRA -> MXN", "YEN -> MXN", "Won SK -> MXN" }));
+        comboConversion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una conversión", "USD -> MXN", "EUR -> MXN", "LIBRA -> MXN", "YEN -> MXN", "Won SK -> MXN" }));
         comboConversion.setFocusable(false);
         comboConversion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
